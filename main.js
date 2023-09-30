@@ -1,3 +1,25 @@
+let parac;
+let ibu;
+let amoxi;
+let cefa;
+let diclo;
+let paracPrecio = 1000;
+let ibuPrecio = 2000;
+let amoxiPrecio = 1000;
+let cefaPrecio = 800;
+let dicloPrecio = 1300;
+let med1;
+let med2;
+let med3;
+let med4;
+let med5;
+let resultado1;
+let resultado2;
+let resultado3;
+let resultado4;
+let resultado5;
+let sumaTotal = 0;
+let aceptaCompra;
 for (let numero = 1; numero <= 5; numero++) {
   function pedirDatos() {
     let saludo = "Bienvenido";
@@ -9,130 +31,137 @@ for (let numero = 1; numero <= 5; numero++) {
         if (direccion !== "") {
           alert(`${saludo} ${nombre} ${apellido}`);
 
-          let parac = prompt(
-            "Ingrese si quiere Paracetamol (si/no)"
-          ).toLowerCase();
-          let paracprecio = 1000;
+          parac = prompt("Ingrese si quiere Paracetamol (si/no)").toLowerCase();
           if (parac === "si") {
-            let med1 = parseInt(
+            med1 = parseInt(
               prompt("Ingrese la cantidad de cajas de Paracetamol que necesita")
             );
-            if (med1 < 1) {
+            if (med1 < 0) {
+              resultado1 = 0;
               alert(`No ingresaste cantidad`);
             } else if (med1 > 5) {
+              resultado1 = 0;
               alert(`No hay esa cantidad`);
             } else {
-             let resultado1 = alert(med1 * paracprecio);
+              resultado1 = med1 * paracPrecio;
+              alert(`$${resultado1}`);
             }
-
           } else if (parac === "no") {
+            resultado1 = 0;
             alert("Usted no quiere Paracetamol");
           } else {
+            resultado1 = 0;
             alert("No ingresaste si/no");
           }
-          let ibu = prompt(
-            "Ingrese si quiere Ibuprofeno (si/no)"
-          ).toLowerCase();
-          let ibuprecio = 2000
+          ibu = prompt("Ingrese si quiere Ibuprofeno (si/no)").toLowerCase();
+
           if (ibu === "si") {
-            let med2 = parseInt(
+            med2 = parseInt(
               prompt("Ingrese la cantidad de cajas de Ibuprofeno que necesita")
             );
-            if (med2 < 1) {
+            if (med2 < 0) {
+              resultado2 = 0;
               alert(`No ingresaste cantidad`);
             } else if (med2 > 5) {
+              resultado2 = 0;
               alert(`No hay esa cantidad`);
             } else {
-              let resultado2 = alert(med2 * ibuprecio);
-              
+              resultado2 = med2 * ibuPrecio;
+              alert(`$${resultado2}`);
             }
-
           } else if (ibu === "no") {
+            resultado2 = 0;
             alert("Usted no quiere Ibuprofeno");
           } else {
+            resultado2 = 0;
             alert("No ingresaste si/no");
           }
-          let amoxi = prompt(
-            "Ingrese si quiere Amoxicilina (si/no)"
-          ).toLowerCase();
-          let amoxiprecio = 1000
+          amoxi = prompt("Ingrese si quiere Amoxicilina (si/no)").toLowerCase();
+
           if (amoxi === "si") {
-            let med3 = parseInt(
+            med3 = parseInt(
               prompt("Ingrese la cantidad de cajas de Amoxicilina que necesita")
             );
-            if (med3 < 1) {
+            if (med3 < 0) {
+              resultado3 = 0;
               alert(`No ingresaste cantidad`);
             } else if (med3 > 5) {
+              resultado3 = 0;
               alert(`No hay esa cantidad`);
             } else {
-              let resultado3 = alert(med3 * amoxiprecio);
+              resultado3 = med3 * amoxiPrecio;
+              alert(`$${resultado3}`);
             }
           } else if (amoxi === "no") {
+            resultado3 = 0;
             alert("Usted no quiere Amoxicilina");
           } else {
+            resultado3 = 0;
             alert("No ingresaste si/no");
           }
-          let cefa = prompt(
-            "Ingrese si quiere Cefalexina (si/no)"
-          ).toLowerCase();
-          let cefaprecio = 800
+          cefa = prompt("Ingrese si quiere Cefalexina (si/no)").toLowerCase();
+
           if (cefa === "si") {
-            let med4 = parseInt(
+            med4 = parseInt(
               prompt("Ingrese la cantidad de cajas de Cefalexina que necesita")
             );
-            if (med4 < 1) {
+            if (med4 < 0) {
+              resultado4 = 0;
               alert(`No ingresaste cantidad`);
             } else if (med4 > 5) {
+              resultado4 = 0;
               alert(`No hay esa cantidad`);
             } else {
-              let resultado4 = alert(med4 * cefaprecio);
-              
+              resultado4 = med4 * cefaPrecio;
+              alert(`$${resultado4}`);
             }
           } else if (cefa === "no") {
+            resultado4 = 0;
             alert("Usted no quiere Cefalexina");
           } else {
+            resultado4 = 0;
             alert("No ingresaste si/no");
           }
-          let diclo = prompt(
-            "Ingrese si quiere Diclofenac (si/no)"
-          ).toLowerCase();
-          let dicloprecio = 1300
+          diclo = prompt("Ingrese si quiere Diclofenac (si/no)").toLowerCase();
+
           if (diclo === "si") {
-            let med5 = parseInt(
+            med5 = parseInt(
               prompt("Ingrese la cantidad de cajas de Diclofenac que necesita")
             );
-            if (med5 < 1) {
+            if (med5 < 0) {
+              resultado5 = 0;
               alert(`No ingresaste cantidad`);
             } else if (med5 > 5) {
+              resultado5 = 0;
               alert(`No hay esa cantidad`);
             } else {
-              let resultado5 = alert(med5 * dicloprecio);
+              resultado5 = med5 * dicloPrecio;
+              alert(`$${resultado5}`);
             }
           } else if (diclo === "no") {
+            resultado5 = 0;
             alert("Usted no quiere Diclofenac");
           } else {
+            resultado5 = 0;
             alert("No ingresaste si/no");
           }
+          sumaTotal =
+            resultado1 + resultado2 + resultado3 + resultado4 + resultado5;
 
-          function total(resultado1, resultado2, resultado3, resultado4, resultado5, suma){
-            
-            switch (suma) {
-              case "+":
-                return resultado1 + resultado2 + resultado3 + resultado4 + resultado5;
-                break
+          if (sumaTotal > 0) {
+            aceptaCompra = prompt(
+              `El total es: $${sumaTotal}. ¿Acepta la compra? (si/no)`
+            );
+            if (aceptaCompra !== "si") {
+              alert(`Pedido Cancelado`).toLowerCase();
+            } else {
+              alert(
+                `PEDIDO: #${numero} NOMBRE Y APELLIDO: ${nombre} ${apellido} DIRECCION: ${direccion}`
+              );
             }
+          } else {
+            alert(`Pedido Cancelado!!`);
           }
-          let resultado1 = (med1 * paracprecio)
-          let resultado2 = (med2 * ibuprecio)
-          let resultado3 = (med3 * amoxiprecio)
-          let resultado4 = (med4 * cefaprecio)
-          let resultado5 = (med5 * dicloprecio) 
-          let resultadoTotal = total(resultado1, resultado2, resultado3, resultado4, resultado5, suma)
-          alert(`${resultado1} ${suma} ${resultado2} ${suma} ${resultado3} ${suma} ${resultado4} ${suma} ${resultado5} = ${resultadoTotal}`)
-
-          alert(
-            `PEDIDO: #${numero} NOMBRE Y APELLIDO: ${nombre} ${apellido} DIRECCION: ${direccion}`
-          );
         } else {
           alert("No ingresaste ninguna Direccion");
         }
@@ -146,22 +175,3 @@ for (let numero = 1; numero <= 5; numero++) {
   pedirDatos();
 }
 alert("No disponemos de cadete de momento, intente mas tarde. Muchas Gracias");
-// (MEDICACION === "amoxicilina") {
-//     prompt(`Ingrese la cantidad de cajas de ${MEDICACION} que necesita`);
-// }else if (MEDICACION === "cefalexina") {
-//     prompt(`Ingrese la cantidad de cajas de ${MEDICACION} que necesita`);
-// }else if (MEDICACION === "diclofenac") {
-//     prompt(`Ingrese la cantidad de cajas de ${MEDICACION} que necesita`);
-// }
-// else{
-//     prompt(`Ingrese la cantidad de cajas de ${MEDICACION} que necesita`);
-// }
-// }else {
-//     alert("No ingresaste ninguna Direccion");
-// }
-// }else {
-//     alert("No ingresaste tu Apellido");
-// }
-// }else {
-//     alert(`Nombre se debe ingresar`);
-// }
