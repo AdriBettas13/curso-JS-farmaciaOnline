@@ -1,12 +1,15 @@
+let saludo = "Bienvenido";
 let parac;
 let ibu;
+
+
 let amoxi;
 let cefa;
 let diclo;
-let paracPrecio = 1000;
+let paracPrecio = 1700;
 let ibuPrecio = 2000;
-let amoxiPrecio = 1000;
-let cefaPrecio = 800;
+let amoxiPrecio = 1200;
+let cefaPrecio = 1400;
 let dicloPrecio = 1300;
 let med1;
 let med2;
@@ -20,16 +23,142 @@ let resultado4;
 let resultado5;
 let sumaTotal = 0;
 let aceptaCompra;
+let buscar
+const medicamento0 = {
+  nombre: "Paracetamor",
+  droga:  "Paracetamol",
+  dosis: 500,
+  cantidad: 40,
+  precio: 1700,
+};
+const medicamento1 = {
+  nombre: "Bupofreno",
+  droga: "Ibuprofeno",
+  dosis: 600,
+  cantidad: 40,
+  precio: 2000,
+};
+const medicamento2 = {
+  nombre: "Mosicilina",
+  droga: "Amoxicilina",
+  dosis: 500,
+  cantidad: 21,
+  precio: 1200,
+};
+const medicamento3 = {
+  nombre: "Cefalesina",
+  droga: "Cefalexina",
+  dosis: 500,
+  cantidad: 28,
+  precio: 1400,
+};
+const medicamento4 = {
+  nombre: "Diclofená",
+  droga: "Diclofenac",
+  dosis: 75,
+  cantidad: 20,
+  precio: 1300,
+};
+
+const medicamentos1 = ["paracetamol", "ibuprofeno", "amoxicilina", "cefalexina", "diclofenac"];
+
+
+const eliminar = (medicamento) => {
+  let index = medicamentos1.indexOf(medicamento);
+
+  if (index != -1) {
+    medicamentos1.splice(index, 1);
+    console.log(medicamentos1);
+     }
+     
+}
+
+eliminar("diclofenac")
+eliminar("ibuprofeno")
+
+
+const medicamentos = [
+  {droga: "Paracetamol", nombre: "Paracetamor", indicacion: "Analgésico", dosis: 500, cantidad: 40, precio: 1700}, 
+  {droga: "Ibuprofeno", nombre: "Ibupofreno", indicacion: "Analgésico", dosis: 600, cantidad: 40, precio: 2000},
+  {droga: "Amoxicilina", nombre: "Mosicilina", indicacion: "Antibiótico", dosis: 500, cantidad: 21, precio: 1200},
+  {droga: "Cefalexina", nombre: "Cefaselina", indicacion: "Antibiótico", dosis: 500, cantidad: 28, precio: 1400},
+  {droga: "Diclofenac", nombre: "Diclofená", indicacion: "Analgésico",  dosis: 75, cantidad: 20, precio: 1300},
+   ];
+   let encontrar = medicamentos.find((item) => item.droga === "Amoxicilina");
+   console.log(encontrar);
+   let filtrar = medicamentos.filter((item) => item.indicacion === "Analgésico")
+console.log(filtrar);
+
+const preciosObraSocial = medicamentos.map((item)=>  {
+  return {
+    DROGA: item.droga,
+    NOMBRE: item.nombre,
+    INDICACION: item.indicacion, 
+    DOSIS: item.dosis,
+    CANTIDAD: item.cantidad,
+    PRECIO: item.precio - item.precio * 0.40,
+
+  }
+})
+console.log(preciosObraSocial);
+function pedirEmail (email){
+  alert (`El comprobante de compra ha sido enviado a ${email}`);
+}
+
+
 for (let numero = 1; numero <= 5; numero++) {
-  function pedirDatos() {
-    let saludo = "Bienvenido";
+   {
+    
+    let intro = prompt("Usted quiere saber sobre nuestros productos (si/no)").toLowerCase();
+    if (intro === "si") {
+      let para1 = prompt(`¿Usted desea saber sobre PARACETAMOL (SI/NO)?`).toLowerCase();
+      if (para1=== "si"){
+        alert(`NOMBRE: ${medicamento0.nombre} // DROGA: ${medicamento0.droga} // DOSIS: ${medicamento0.dosis}mg // CANTIDAD: ${medicamento0.cantidad}Uni // PRECIO: $${medicamento0.precio}`);
+      }else{
+        alert(`Usted no quiere saber sobre PARACETAMOL`)
+      }
+      let ibu1 = prompt(`¿Usted desea saber sobre IBUPROFENO (SI/NO)?`).toLowerCase();
+      if (ibu1 === "si"){
+        alert(`NOMBRE: ${medicamento1.nombre} // DROGA: ${medicamento1.droga} // DOSIS: ${medicamento1.dosis}mg // CANTIDAD: ${medicamento1.cantidad}Uni // PRECIO: $${medicamento1.precio}`);
+      }else{
+        alert(`Usted no quiere saber sobre IBUPROFENO`)
+      }
+      let amox1 = prompt(`¿Usted desea saber sobre AMOXICILINA (SI/NO)?`).toLowerCase();
+      if (amox1 === "si"){
+        alert(`NOMBRE: ${medicamento2.nombre} // DROGA: ${medicamento2.droga} // DOSIS: ${medicamento2.dosis}mg // CANTIDAD: ${medicamento2.cantidad}Uni // PRECIO: $${medicamento2.precio}`);
+      }else{
+        alert(`Usted no quiere saber sobre AMOXICILINA`)
+      }
+      let cefa1 = prompt(`¿Usted desea saber sobre CEFALEXINA (SI/NO)?`).toLowerCase();
+      if (cefa1 === "si"){
+        alert(`NOMBRE: ${medicamento3.nombre} // DROGA: ${medicamento3.droga} // DOSIS: ${medicamento3.dosis}mg // CANTIDAD: ${medicamento3.cantidad}Uni // PRECIO: $${medicamento3.precio}`);
+      }else{
+        alert(`Usted no quiere saber sobre CEFALEXINA`)
+      }
+      let diclo1 = prompt(`¿Usted desea saber sobre DICLOFENAC (SI/NO)?`).toLowerCase();
+      if (diclo1 === "si"){
+      alert(`NOMBRE: ${medicamento4.nombre} // DROGA: ${medicamento4.droga} // DOSIS: ${medicamento4.dosis}mg // CANTIDAD: ${medicamento4.cantidad}Uni // PRECIO: $${medicamento4.precio}`);
+    
+    }else {
+      alert(`Usted no quiere saber sobre DICLOFENAC`)
+    }
+  }else {
+      alert(`Usted no quiere conocer los productos o bien ya los conoce.`)
+    }
+
+
+   alert(`Ahora procedera a poner sus datos y productos para realizar la compra`)
+
     let nombre = prompt("Ingrese su nombre");
     if (nombre !== "") {
       let apellido = prompt("Ingrese su apellido");
       if (apellido !== "") {
+        let correo = prompt("Ingrese su Email");
+        if (correo !=="") {
         let direccion = prompt("Ingrese su direccion");
         if (direccion !== "") {
           alert(`${saludo} ${nombre} ${apellido}`);
+       
 
           parac = prompt("Ingrese si quiere Paracetamol (si/no)").toLowerCase();
           if (parac === "si") {
@@ -158,6 +287,7 @@ for (let numero = 1; numero <= 5; numero++) {
               alert(
                 `PEDIDO: #${numero} NOMBRE Y APELLIDO: ${nombre} ${apellido} DIRECCION: ${direccion}`
               );
+              pedirEmail(correo);
             }
           } else {
             alert(`Pedido Cancelado!!`);
@@ -165,6 +295,12 @@ for (let numero = 1; numero <= 5; numero++) {
         } else {
           alert("No ingresaste ninguna Direccion");
         }
+       } else {
+        alert("No ingresaste ningun Email")
+       } 
+       
+       
+       
       } else {
         alert("No ingresaste tu Apellido");
       }
@@ -172,6 +308,6 @@ for (let numero = 1; numero <= 5; numero++) {
       alert(`Nombre se debe ingresar`);
     }
   }
-  pedirDatos();
+  
 }
 alert("No disponemos de cadete de momento, intente mas tarde. Muchas Gracias");
