@@ -6,29 +6,51 @@
     <title>Document</title>
   </head>
   <body>
-    <main>
+    <main id="inicio">
       <div>
         <h1>Bienvenidos a la farmacia online</h1>
         <h2>
           En este sitio, usted puede corroborar los medicamentos que tenemos en
           stock y solicitarlos via online.
-        </h2>
-      </div>
+        </div>
+      </h2>
       <div>
         <div>
             <h1>
                 Aqui los medicamentos disponibles que usted puede pedir en nuestro sitio
             </h1>
+          </div>
+          <div>
+            <input type="text" id="busqueda" placeholder="Buscar...">
+            <button id="botonBuscar">Buscar</button>
+            <ul>
+              <li>Paracetamol</li>
+               <li>Ibuprofeno</li> 
+               <li> Amoxicilina</li>
+                <li>Cefalexina</li> 
+                <li>Diclofenac</li>
+              </ul>
+            <div id="resultados">
+            </div>
+          </div>
+          <div id="resultado">
+
+          </div>
+       
         </div>
-        <ul>
-          <li>Paracetamol</li>
-           <li>Ibuprofeno</li> 
-           <li> Amoxicilina</li>
-            <li>Cefalexina</li> 
-            <li>Diclofenac</li>
-          
-        </ul>
-      </div>
+        <form id="formulario">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido" required>
+          <label for="email">E-mail:</label>
+          <input type="email" id="correo" name="email" placeholder="Ingrese su E-mail" required>
+          <label for="direccion">Domicilio:</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Ingrese su Dirección">
+          <input type="submit" name="submit"  id="submit" value="Enviar">
+        </form>
+        </div>
+        <div id="carrito"> </div>
     </main>
 <script src="./main.js"></script>
       </body>
