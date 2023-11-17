@@ -1,57 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    <main id="inicio">
-      <div>
-        <h1>Bienvenidos a la farmacia online</h1>
-        <h2>
-          En este sitio, usted puede corroborar los medicamentos que tenemos en
-          stock y solicitarlos via online.
-        </div>
-      </h2>
-      <div>
-        <div>
-            <h1>
-                Aqui los medicamentos disponibles que usted puede pedir en nuestro sitio
-            </h1>
-          </div>
-          <div>
-            <input type="text" id="busqueda" placeholder="Buscar...">
-            <button id="botonBuscar">Buscar</button>
-            <ul>
-              <li>Paracetamol</li>
-               <li>Ibuprofeno</li> 
-               <li> Amoxicilina</li>
-                <li>Cefalexina</li> 
-                <li>Diclofenac</li>
-              </ul>
-            <div id="resultados">
-            </div>
-          </div>
-          <div id="resultado">
+</head>
+<body>
+<div id="login">
+    <h2>Login:</h2>
+    <label for="username">Usuario:</label>
+    <input type="text" id="usuario"/>
+    <br />
+    <label for="password">Contraseña:</label>
+    <input type="password" id="contraseña"/> 
+    <br /> 
+        <button onclick="login()" >Iniciar Sesión</button>
+        <button id="btnRegistro">Registrarse</button>
+    <p id="estadoSesion"></p>  
+</div>
+<div id="seccionRegistro" class="registroDiv">
+    <h2> Registrarse </h2>
+    <label for="correo">Correo Electronico:</label>
+    <input type="email" id="correo" />
+    <label for="direccion">Domicilio:</label>
+    <input type="text" id="direccion">
+    <label for="nuevoUsuario">Nuevo Usuario</label>
+    <input type="text" id="nuevoUsuario"/>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="nuevaContraseña" />
+    <br />
+    <button onclick="registrarUsuario()">Registrarse</button>
+    <button onclick="iniciarSesion()">Iniciar Sesión</button>
+    <p id="estadoRegistro"></p>
 
-          </div>
-       
-        </div>
-        <form id="formulario">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
-          <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido" required>
-          <label for="email">E-mail:</label>
-          <input type="email" id="correo" name="email" placeholder="Ingrese su E-mail" required>
-          <label for="direccion">Domicilio:</label>
-          <input type="text" id="direccion" name="direccion" placeholder="Ingrese su Dirección">
-          <input type="submit" name="submit"  id="submit" value="Enviar">
-        </form>
-        </div>
-        <div id="carrito"> </div>
-    </main>
+</div>
+
+
 <script src="./main.js"></script>
-      </body>
+</body>
 </html>
