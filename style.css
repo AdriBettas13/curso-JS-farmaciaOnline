@@ -1,3 +1,104 @@
+body{
+    background-image: url("./img/pngtree-medical-pills-and-capsules-pharmacy-vector-illustration-image_1104438.jpg");
+}
 .registroDiv{
     display: none;
+}
+.bienvenido {
+    display: none;
+}
+.texto-verde
+{
+    color: green;
+    font-size: 2rem;
+}
+.texto-rojo {
+    color: red;
+    font-size: 2rem;
+
+}
+
+.login {
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+    background-color: aquamarine;
+    margin: 7rem;
+    padding: 3rem;
+}
+.medicamento {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+  text-align: center;
+}
+
+
+.medicamento label {
+    margin-right: 10px;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+.medicamento input,
+.medicamento button {
+    font-size: 14px;
+    margin-inline: 49rem;
+    text-align: center;
+    border-radius: 0.5rem;
+  
+}
+
+.carrito {
+    display: none;
+}
+
+header
+{
+    background-color: aquamarine;
+}
+ 
+header .bienvenidoText {
+    text-align: center;
+    font-size: 3rem;
+}
+.divBuscador{
+    display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-inline: 50rem;
+  gap: 1rem;
+  background-color: #7fffd4;
+  padding: 2rem;
+
+}
+ul {
+    text-align: center;
+}
+
+#carrito{
+    text-align: center;
+    text-align: center;
+  background-color: aquamarine;
+  padding: 1rem;
+}
+
+
+.estilo-carrito {
+    font-size: 4rem;
+    color: black;
+
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -8,31 +9,42 @@
 <body>
     <header>
         <div>
-          <h1>Bienvenidos a nuestra Famacia Online</h1>
+          <h1 class="bienvenidoText">Bienvenidos a nuestra Famacia Online</h1>
       
         </div>
       </header>
-    <div>
-        <input type="text" id="busqueda" placeholder="Buscar...">
-        <button id="botonBuscar">Buscar</button>
-        <button id="botonBorrar">Borrar búsqueda</button>
-        <ul>
-          <li>Paracetamol</li>
-           <li>Ibuprofeno</li> 
-           <li> Amoxicilina</li>
-            <li>Cefalexina</li> 
-            <li>Diclofenac</li>
-          </ul>
-        <div id="resultados">
-        </div>
-      </div>
-      <div id="resultado"> </div>
-      <div id="carrito">
-        <h2>Carrito de Compras</h2>
-          <div id="carritoContenido"></div>
-          <div id="carritoTotal">Total: $0.00</div>
-          <button onclick="borrarCarrito()">Borrar Carrito</button>
-      </div>
-      <script src="medicamentos.js"></script>
+      <section class="bienvenida" id="bienvenida">
+        <h1 id="mensajeBienvenida"></h1>
+      </section>
+      <section id="muestraMedicamentos"> 
+        <div>
+          <div class="divBuscador">
+            <input type="text" id="busqueda" placeholder="Buscar...">
+            <button id="botonBuscar">Buscar</button>
+            <button id="botonBorrar">Borrar búsqueda</button>
+            <ul>
+              <li>Paracetamol</li>
+               <li>Ibuprofeno</li> 
+               <li> Amoxicilina</li>
+                <li>Cefalexina</li> 
+                <li>Diclofenac</li>
+              </ul>
+            </div>
+            <div id="resultados">
+            </div>
+          
+          </div>
+          <div id="resultado"> </div>
+          <div id="carrito">
+            <h2>Carrito de Compras</h2>
+              <div id="carritoContenido"></div>
+              <div id="carritoTotal">Total: $0.00</div>
+              <button onclick="borrarCarrito()">Borrar Carrito</button>
+              <button onclick="validarCompra()">Comprar</button>
+               <p class="mensajeCompra" id="mensajeCompra"></p>
+
+          </div>
+      </section>
+        <script src="medicamentos.js"></script>
 </body>
 </html>
