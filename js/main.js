@@ -19,7 +19,7 @@ function registrarUsuario() {
     contraseña: document.getElementById("nuevaContraseña").value,
   };
 
-  if (!nuevoUsuario.nombre || !nuevoUsuario.apellido  || !nuevoUsuario.correo || !nuevoUsuario.direccion || !nuevoUsuario.contraseña) {
+  if (!nuevoUsuario.nombre || !nuevoUsuario.apellido || !nuevoUsuario.correo || !nuevoUsuario.direccion || !nuevoUsuario.contraseña) {
     estadoRegistro.innerText = "Por favor, complete todos los campos.";
     estadoRegistro.classList.add("texto-rojo");
     estadoRegistro.classList.remove("texto-verde");
@@ -28,19 +28,19 @@ function registrarUsuario() {
 
   if (nuevoUsuario.nombre.length < 4 || nuevoUsuario.nombre.length > 11) {
     estadoRegistro.innerText = "El nombre debe tener entre 4 y 11 caracteres.";
-    estadoRegistro.classList("texto-rojo");
-    estadoRegistro.classList.remove("texto-verde");
-    return;
-  }
-
-  if (nuevoUsuario.contraseña.length < 8) {
-    estadoRegistro.innerText = "La contraseña debe tener al menos 8 caracteres.";
     estadoRegistro.classList.add("texto-rojo");
     estadoRegistro.classList.remove("texto-verde");
     return;
   }
 
-  const usuarioExistente = usuarios.find(user => user.usuario === nuevoUsuario.nombre);
+  if (nuevoUsuario.contraseña.length < 8 || nuevoUsuario.contraseña.length > 10) {
+    estadoRegistro.innerText = "La contraseña debe tener entre 8 y 10 caracteres.";
+    estadoRegistro.classList.add("texto-rojo");
+    estadoRegistro.classList.remove("texto-verde");
+    return;
+  }
+
+  const usuarioExistente = usuarios.find(user => user.correo === nuevoUsuario.correo);
   if (usuarioExistente) {
     estadoRegistro.innerText = "El usuario ya existe.";
     estadoRegistro.classList.add("texto-rojo");
@@ -48,7 +48,7 @@ function registrarUsuario() {
   } else {
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    estadoRegistro.innerText = `Usuario Registrado: Nombre: ${nuevoUsuario.nombre} / Correo: ${nuevoUsuario.correo} / Direccion: ${nuevoUsuario.direccion} / Contraseña: ${nuevoUsuario.contraseña}`;
+    estadoRegistro.innerText = `Usuario Registrado: Apellido y Nombre: ${nuevoUsuario.apellido}, ${nuevoUsuario.nombre} / Correo: ${nuevoUsuario.correo} / Direccion: ${nuevoUsuario.direccion} / Contraseña: ${nuevoUsuario.contraseña}`;
     estadoRegistro.classList.add("texto-verde");
     estadoRegistro.classList.remove("texto-rojo");
   }
@@ -56,14 +56,14 @@ function registrarUsuario() {
 
 const btnRegistro = document.getElementById("btnRegistro");
 
-btnRegistro.addEventListener("click", function() {
+btnRegistro.addEventListener("click", function () {
   registro.style.display = "block";
   login.style.display = "none";
 });
 
 const btnSesionMostrar = document.getElementById("btnSesionInicio");
 
-btnSesionMostrar.addEventListener("click", function() {
+btnSesionMostrar.addEventListener("click", function () {
   login.style.display = "block";
   registro.style.display = "none";
 });
@@ -73,10 +73,9 @@ function iniciarSesionPromise(correo, contra) {
     const usuarioValido = usuarios.find(user => user.correo === correo && user.contraseña === contra);
 
     if (usuarioValido) {
-      localStorage.setItem("usuarioActual", JSON.stringify(usuarioValido));
-      localStorage.setItem("usuarioAutenticado", true);
-
       setTimeout(() => {
+        localStorage.setItem("usuarioActual", JSON.stringify(usuarioValido));
+        localStorage.setItem("usuarioAutenticado", true);
         resolve(`Inicio de sesión exitoso. ¡Bienvenido ${usuarioValido.apellido}, ${usuarioValido.nombre}!`);
       }, 2000);
     } else {
@@ -109,18 +108,15 @@ function iniciarSesion() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const usuarioAutenticado = JSON.parse(localStorage.getItem("usuarioAutenticado")) || false;
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 
   if (usuarioAutenticado && usuarioActual) {
-    bienvenido.innerText = `¡Bienvenido ${usuarioActual.apellido}, ${usuarioActual.nombre} ! Espere unos segundos y sera dirigido a la pagina de compra`;
+    bienvenido.innerText = `¡Bienvenido ${usuarioActual.apellido}, ${usuarioActual.nombre} ! Espere unos segundos y será dirigido a la página de compra`;
     bienvenido.classList.add("texto-negro");
-    usuarioActual.nombre.classList.add("texto-verde")
-    usuarioActual.classList.add("texto-verde")
     bienvenido.style.display = "block";
     login.style.display = "none";
-    
     registro.style.display = "none";
     setTimeout(() => {
       window.location.href = './pages/medicamentos.html';
