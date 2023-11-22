@@ -1,0 +1,7 @@
+[
+    { "droga": "Paracetamol", "nombre": "Paracetamor", "indicacion": "Analgésico", "dosis": 500, "cantidad": 40, "precio": 1700 },
+    { "droga": "Ibuprofeno", "nombre": "Ibupofreno", "indicacion": "Analgésico", "dosis": 600, "cantidad": 40, "precio": 2000 },
+    { "droga": "Amoxicilina", "nombre": "Mosicilina", "indicacion": "Antibiótico", "dosis": 500, "cantidad": 21, "precio": 1200 },
+    { "droga": "Cefalexina", "nombre": "Cefaselina", "indicacion": "Antibiótico", "dosis": 500, "cantidad": 28, "precio": 1400 },
+    { "droga": "Diclofenac", "nombre": "Diclofená", "indicacion": "Analgésico", "dosis": 75, "cantidad": 20, "precio": 1300 }
+]

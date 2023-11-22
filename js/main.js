@@ -99,7 +99,7 @@ function iniciarSesion() {
       estadoSesion.classList.remove("texto-rojo");
 
       setTimeout(() => {
-        window.location.href = 'medicamentos.html';
+        window.location.href = './pages/medicamentos.html';
       }, 2000);
     })
     .catch(error => {
@@ -115,12 +115,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   if (usuarioAutenticado && usuarioActual) {
     bienvenido.innerText = `¡Bienvenido ${usuarioActual.apellido}, ${usuarioActual.nombre} ! Espere unos segundos y sera dirigido a la pagina de compra`;
-    bienvenido.classList.add("texto-verde");
+    bienvenido.classList.add("texto-negro");
+    usuarioActual.nombre.classList.add("texto-verde")
+    usuarioActual.classList.add("texto-verde")
     bienvenido.style.display = "block";
     login.style.display = "none";
+    
     registro.style.display = "none";
     setTimeout(() => {
-      window.location.href = 'medicamentos.html';
+      window.location.href = './pages/medicamentos.html';
     }, 3000);
   } else {
     login.style.display = "block";

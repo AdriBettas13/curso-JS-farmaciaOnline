@@ -1,8 +1,16 @@
 body{
-    background-image: url("./img/pngtree-medical-pills-and-capsules-pharmacy-vector-illustration-image_1104438.jpg");
+    background-image: url("../img/pngtree-medical-pills-and-capsules-pharmacy-vector-illustration-image_1104438.jpg");
+    
+    
+    
 }
 .registroDiv{
     display: none;
+}
+.texto-negro{
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
 }
 .bienvenido {
     display: none;
@@ -37,7 +45,11 @@ body{
     margin-bottom: 10px;
     justify-content: center;
   text-align: center;
+  margin-inline: 30rem;
+  margin-block: 3rem;
+  border: 0.3rem black solid;
 }
+
 
 
 .medicamento label {
@@ -94,6 +106,9 @@ ul {
     text-align: center;
   background-color: aquamarine;
   padding: 1rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 
